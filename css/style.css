@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+   background: url('../img/wallpaper.jpg');
+}
+
+.wrapper {
+   overflow: hidden;
+   position: relative;
+   height: 100%;
+}
+
+.room__container {
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+   width: 1000px;
+   height: 850px;
+   border-radius: 5%;
+   background: url('../img/carpet.jpg');
+}
+
+.room__run-button {
+   position: absolute;
+   top: 706px;
+   left: 351px;
+   z-index: 2;
+   width: 25px;
+   height: 11px;
+   transition: border 1s ease,
+      background-color 1s ease;
+}
+
+.room__run-button:hover {
+   border: 1px solid white;
+   background-color: rgba(169, 169, 169, 0.267);
+}
+
+.room__run-button:hover~div .room__body-player {
+   animation: run 0.3s linear infinite;
+}
+
+.room__run-button:hover~div .room__body-tv-screen {
+   animation: bg 1s linear infinite;
+}
+
+.room__run-back-button {
+   position: absolute;
+   top: 706px;
+   left: 315px;
+   z-index: 2;
+   width: 25px;
+   height: 11px;
+   transition: border 1s ease,
+      background-color 1s ease;
+}
+
+.room__run-back-button:hover {
+   border: 1px solid white;
+   background-color: rgba(169, 169, 169, 0.267);
+}
+
+.room__run-back-button:hover~div .room__body-player {
+   animation: run 0.3s linear infinite;
+   transform: rotateY(180deg);
+}
+
+.room__run-back-button:hover~div .room__body-tv-screen {
+   animation: bg 1s linear reverse infinite;
+}
+
+.room__jump-button {
+   position: absolute;
+   top: 682px;
+   left: 340px;
+   z-index: 2;
+   width: 11px;
+   height: 25px;
+   transition: border 1s ease,
+      background-color 1s ease;
+}
+
+.room__jump-button:hover {
+   border: 1px solid white;
+   background-color: rgba(169, 169, 169, 0.267);
+}
+
+.room__jump-button:hover~div .room__body-player {
+   animation: idle 0.5s linear infinite 0.5s, jump 1s linear;
+}
+
+.room__jump-button:hover~div .room__body-tv-screen {
+   animation: bg 1s linear forwards;
+}
+
+.room__slide-button {
+   position: absolute;
+   top: 720px;
+   left: 340px;
+   z-index: 2;
+   width: 11px;
+   height: 25px;
+   transition: border 1s ease,
+      background-color 1s ease;
+}
+
+.room__slide-button:hover {
+   border: 1px solid white;
+   background-color: rgba(169, 169, 169, 0.267);
+}
+
+.room__slide-button:hover~div .room__body-player {
+   animation: idle 0.5s linear infinite 0.5s, slide 0.5s linear;
+}
+
+.room__slide-button:hover~div .room__body-tv-screen {
+   animation: bg 0.5s linear;
+}
+
+.room__nitro-button {
+   position: absolute;
+   top: 699px;
+   left: 520px;
+   z-index: 2;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   transition: border 1s ease,
+      background-color 1s ease;
+}
+
+.room__nitro-button:hover {
+   border: 1px solid white;
+   background-color: rgba(169, 169, 169, 0.267);
+}
+
+.room__nitro-button:hover~div .room__body-player {
+   animation: nitro 0.3s linear infinite;
+}
+
+.room__nitro-button:hover~div .room__body-tv-screen{
+   animation: bg 0.3s linear infinite;
+}
+
+.room__roll-button {
+   position: absolute;
+   top: 684px;
+   left: 554px;
+   z-index: 2;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   transition: border 1s ease,
+      background-color 1s ease;
+}
+
+.room__roll-button:hover {
+   border: 1px solid white;
+   background-color: rgba(169, 169, 169, 0.267);
+}
+
+.room__roll-button:hover~div .room__body-player {
+   animation: roll 0.3s linear infinite;
+}
+
+.room__roll-button:hover~div .room__body-tv-screen {
+   animation: bg 0.3s linear infinite;
+}
+
+.room__attack-button {
+   position: absolute;
+   top: 717px;
+   left: 486px;
+   z-index: 2;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+   transition: border 1s ease,
+      background-color 1s ease;
+}
+
+.room__attack-button:hover {
+   border: 1px solid white;
+   background-color: rgba(169, 169, 169, 0.267);
+}
+
+.room__attack-button:hover~div .room__body-player {
+   animation: attack 0.5s linear infinite;
+}
+
+.room__pause-button {
+   position: absolute;
+   top: 660px;
+   left: 495px;
+   z-index: 2;
+   width: 35px;
+   height: 10px;
+   transform: rotate(-22deg);
+   transition: border 2s ease,
+      background-color 2s ease;
+}
+
+.room__pause-button:hover {
+   border: 1px solid red;
+   background-color: rgb(202, 117, 117);
+}
+
+.room__pause-button:hover~.room__forbiddance {
+   background-color: rgb(202, 117, 117);
+   opacity: 1;
+}
+
+.room__tv-box {
+   position: absolute;
+   top: 30px;
+   left: 65px;
+   width: 503px;
+   height: 496px;
+   background: url('../img/tv.png') no-repeat;
+}
+
+.room__tv-screen {
+   position: absolute;
+   top: 110px;
+   left: 140px;
+   perspective: 600px;
+   width: 500px;
+   height: 300px;
+}
+
+.room__body-tv-screen {
+   overflow: hidden;
+   position: absolute;
+   transform: rotateX(-15deg) rotateY(40deg);
+   width: 500px;
+   height: 318px;
+   background: url('../img/back/tile.png') 0px 230px repeat-x, 0px 0px / 500px 300px url('../img/game-bg.png') repeat-x;
+   margin: 0 auto;
+}
+
+.room__player {
+   position: absolute;
+   top: 210px;
+   left: 40%;
+   transform: translate(-50%, -50%);
+   width: 100px;
+   height: 100px;
+}
+
+.room__body-player {
+   width: 100%;
+   height: 100%;
+   animation: idle 0.5s linear infinite;
+}
+
+.room__boy {
+   position: absolute;
+   top: 150px;
+   left: 575px;
+   width: 391px;
+   height: 638px;
+   background: url('../img/boy.png') no-repeat;
+}
+
+.room__manual {
+   position: absolute;
+   top: 280px;
+   left: -300px;
+   width: 500px;
+   height: 500px;
+   background: center / 100% 100% url('../img/manual.png') no-repeat;
+}
+
+.room__sega {
+   position: absolute;
+   top: 400px;
+   left: 190px;
+   width: 500px;
+   height: 500px;
+   background: center / 70% url('../img/sega.png') no-repeat;
+}
+
+.test__boy-says {
+   position: absolute;
+   top: 220px;
+   left: 390px;
+   width: 500px;
+   height: 500px;
+   background: center / 30% url('../img/boy-says.png') no-repeat;
+   opacity: 0;
+   transition: opacity 1s ease;
+}
+
+.room__catridges {
+   position: absolute;
+   top: 0px;
+   left: -130px;
+   width: 270px;
+   height: 452px;
+   background: url('../img/cartridges.png') no-repeat;
+}
+
+.room__forbiddance {
+   position: absolute;
+   top: 50px;
+   left: 600px;
+   width: 200px;
+   height: 200px;
+   color: rgb(80, 80, 80);
+   font-family: 'Pacifico', cursive;
+   background-color: white;
+   border-radius: 50%;
+   padding-top: 55px;
+   text-align: center;
+   opacity: 0;
+   z-index: 2;
+   transition: opacity 3s ease 1s, background-color 3s ease 4s;
+}
+
+.room__invitation {
+   position: absolute;
+   top: 50px;
+   left: 600px;
+   width: 200px;
+   height: 200px;
+   color: rgb(80, 80, 80);
+   font-family: 'Pacifico', cursive;
+   background-color: white;
+   border-radius: 50%;
+   padding-top: 55px;
+   text-align: center;
+   opacity: 0;
+   animation: boy-says 2s ease forwards, boy-says-rotation 5s ease;
+}
+
+.room__caption {
+   font-size: 25px;
+   margin-bottom: 15px;
+}
+
+.room__text {
+   width: 150px;
+   margin: 0 auto;
+}
+
+.room__noise {
+   position: absolute;
+   top: -50%;
+   left: -50%;
+   right: -50%;
+   bottom: -50%;
+   width: 200%;
+   height: 200%;
+
+   background: transparent url('../img/noise-transparent.png') repeat 0 0;
+   background-repeat: repeat;
+   animation: noise .2s infinite;
+   opacity: 1;
+}
+
+@keyframes noise {
+   0% {
+      transform: translate(0, 0)
+   }
+
+   10% {
+      transform: translate(-5%, -5%)
+   }
+
+   20% {
+      transform: translate(-10%, 5%)
+   }
+
+   30% {
+      transform: translate(5%, -10%)
+   }
+
+   40% {
+      transform: translate(-5%, 15%)
+   }
+
+   50% {
+      transform: translate(-10%, 5%)
+   }
+
+   60% {
+      transform: translate(15%, 0)
+   }
+
+   70% {
+      transform: translate(0, 10%)
+   }
+
+   80% {
+      transform: translate(-15%, 0)
+   }
+
+   90% {
+      transform: translate(10%, 5%)
+   }
+
+   100% {
+      transform: translate(5%, 0)
+   }
+}
+
+@keyframes idle {
+   0% {
+      background: url('../img/idle/idle-1.png') center no-repeat;
+   }
+
+   20% {
+      background: url('../img/idle/idle-2.png') center no-repeat;
+   }
+
+   40% {
+      background: url('../img/idle/idle-3.png') center no-repeat;
+   }
+
+   60% {
+      background: url('../img/idle/idle-4.png') center no-repeat;
+   }
+
+   80% {
+      background: url('../img/idle/idle-5.png') center no-repeat;
+   }
+
+   100% {
+      background: url('../img/idle/idle-6.png') center no-repeat;
+   }
+}
+
+@keyframes run {
+   0% {
+      background: url('../img/run/run-1.png') center no-repeat;
+   }
+
+   20% {
+      background: url('../img/run/run-2.png') center no-repeat;
+   }
+
+   40% {
+      background: url('../img/run/run-3.png') center no-repeat;
+   }
+
+   60% {
+      background: url('../img/run/run-4.png') center no-repeat;
+   }
+
+   80% {
+      background: url('../img/run/run-5.png') center no-repeat;
+   }
+
+   100% {
+      background: url('../img/run/run-6.png') center no-repeat;
+   }
+}
+
+@keyframes jump {
+   0% {
+      background: url('../img/jump/jump-1.png') center no-repeat;
+      position: absolute;
+      top: 0px;
+   }
+
+   50% {
+      background: url('../img/jump/jump-2.png') center no-repeat;
+      position: absolute;
+      top: -100px;
+   }
+
+   100% {
+      background: url('../img/jump/jump-3.png') center no-repeat;
+      position: absolute;
+      top: 0px;
+   }
+}
+
+@keyframes slide {
+   0% {
+      background: url('../img/slide/slide-1.png') center no-repeat;
+   }
+
+   50% {
+      background: url('../img/slide/slide-2.png') center no-repeat;
+   }
+
+   100% {
+      background: url('../img/slide/slide-3.png') center no-repeat;
+   }
+}
+
+@keyframes nitro {
+   0% {
+      background: url('../img/nitro/nitro-1.png') center no-repeat;
+   }
+
+   25% {
+      background: url('../img/nitro/nitro-2.png') center no-repeat;
+   }
+
+   50% {
+      background: url('../img/nitro/nitro-3.png') center no-repeat;
+   }
+
+   75% {
+      background: url('../img/nitro/nitro-4.png') center no-repeat;
+   }
+
+   100% {
+      background: url('../img/nitro/nitro-5.png') center no-repeat;
+   }
+}
+
+@keyframes roll {
+   0% {
+      background: url('../img/roll/roll-1.png') center no-repeat;
+   }
+
+   20% {
+      background: url('../img/roll/roll-2.png') center no-repeat;
+   }
+
+   40% {
+      background: url('../img/roll/roll-3.png') center no-repeat;
+   }
+
+   60% {
+      background: url('../img/roll/roll-4.png') center no-repeat;
+   }
+
+   80% {
+      background: url('../img/roll/roll-5.png') center no-repeat;
+   }
+
+   100% {
+      background: url('../img/roll/roll-6.png') center no-repeat;
+   }
+}
+
+@keyframes attack {
+   0% {
+      background: url('../img/attack/attack-1.png') center no-repeat;
+   }
+
+   20% {
+      background: url('../img/attack/attack-2.png') center no-repeat;
+   }
+
+   40% {
+      background: url('../img/attack/attack-3.png') center no-repeat;
+   }
+
+   60% {
+      background: url('../img/attack/attack-4.png') center no-repeat;
+   }
+
+   80% {
+      background: url('../img/attack/attack-5.png') center no-repeat;
+   }
+
+   100% {
+      background: url('../img/attack/attack-6.png') center no-repeat;
+   }
+}
+
+@keyframes bg {
+   0% {
+      background: url('../img/back/tile.png') 0px 230px repeat-x,
+         0px 0px / 500px 300px url('../img/game-bg.png') repeat-x;
+   }
+
+   100% {
+      background: url('../img/back/tile.png') -300px 230px repeat-x,
+         0px 0px / 500px 300px url('../img/game-bg.png') repeat-x;
+   }
+}
+
+@keyframes boy-says {
+   0% {
+      opacity: 0;
+   }
+
+   100% {
+      opacity: 1;
+   }
+}
+
+@keyframes boy-says-rotation {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}
